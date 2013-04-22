@@ -366,7 +366,7 @@ function rpx_admin_settings_submit($form, &$form_state) {
   variable_del('rpx_mapping_api');
 
   $lookup = variable_get('rpx_lookup_results');
-  variable_del('rpx_lookup_results');
+  //variable_del('rpx_lookup_results');
 
   variable_set('rpx_apikey', $lookup['apiKey']);
   variable_set('rpx_realm', $lookup['realm']);
