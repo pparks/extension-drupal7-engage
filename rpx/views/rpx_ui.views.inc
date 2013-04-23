@@ -9,6 +9,16 @@
  * Implements hook_views_data().
  */
 function rpx_ui_views_data() {
+  $data = array();
+  $data['node']['share_link'] = array(
+    'group' => t('Janrain Engage'),
+    'title' => t('Engage Share Link'),
+    'help' => t('A link to share the content with Janrain Engage.'),
+    'field' => array(
+      'handler' => 'rpx_ui_handler_field_share',
+    ),
+  );  
+  
   $data['rpx_linked_account']['table']['group']  = t('Janrain Engage');
 
   $data['rpx_linked_account']['table']['join'] = array(

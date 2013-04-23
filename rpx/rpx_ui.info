@@ -14,6 +14,7 @@ files[] = views/rpx_ui_handler_field_provider_icon.inc
 files[] = views/rpx_ui_handler_field_delete_link.inc
 files[] = views/rpx_ui_handler_filter_provider_name.inc
 files[] = views/rpx_ui_handler_filter_provider_title.inc
+files[] = views/rpx_ui_handler_field_share.inc
 configure = admin/config/people/rpx
 
 
