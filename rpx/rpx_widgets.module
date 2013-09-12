@@ -195,6 +195,14 @@ function rpx_js($show_provider_list = FALSE) {
   $rpx_server = variable_get('rpx_server', 'rpxnow.com');
   $app_alias = str_replace(".{$rpx_server}", '', $realm);
   $token = _rpx_token_url();
+  $path_parts = explode('/', current_path());
+  $form_type = 'embed';
+  // Empty string will use the default action text
+  $action_text = '';
+  if ($path_parts[0] == 'user' && $path_parts[2] == 'rpx') {
+     $form_type = 'modal';
+     $action_text = t('Link Account');
+  }
   if($user->uid){$token .= '&add_to_account=true';}
   $output = "<!-- Begin Janrain Engage Sign-In. Visit http://www.rpxnow.com/ -->
 (function() {
@@ -212,7 +220,8 @@ function rpx_js($show_provider_list = FALSE) {
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(e, s);
     
-    janrain.settings.type = 'embed';
+    janrain.settings.type = '$form_type';
+    janrain.settings.actionText = '$action_text';
     janrain.settings.format = 'one row';
     janrain.settings.providersPerPage = 4;
 })();

@@ -68,8 +68,7 @@ function rpx_user_identities($account) {
 
   $links['add_id'] = array(
     'title' => t('Add linked account'),
-    'href' => $sign_in_url,
-    'query' => array('token_url' => $token_url),
+    'href' => '',
     'attributes' => array('class' => 'janrainEngage', 'onclick' => 'return false;'),
   );
 
