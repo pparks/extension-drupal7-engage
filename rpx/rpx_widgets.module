@@ -199,7 +199,7 @@ function rpx_js($show_provider_list = FALSE) {
   $form_type = 'embed';
   // Empty string will use the default action text
   $action_text = '';
-  if ($path_parts[0] == 'user' && $path_parts[2] == 'rpx') {
+  if (sizeof($path_parts) >= 3 && $path_parts[0] == 'user' && $path_parts[2] == 'rpx') {
      $form_type = 'modal';
      $action_text = t('Link Account');
   }
